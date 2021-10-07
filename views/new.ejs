@@ -1,0 +1,41 @@
+<%- include('./partials/header') %>
+
+<hr>
+<h2>New Stop Form</h2>
+<form action="" method="POST">
+    <p>Stop Number</p>
+    <input type="number" name="stopNumber" min="0" max="99" required>
+    <p>Stop Number</p>
+    <input type="text" name="stopName" required>
+    <p>Routes From This Stop</p>
+    <select>
+        <option value="route0">Route 0</option>
+        <option value="route1">Route 1</option>
+        <option value="route2">Route 2</option>
+        <option value="route3">Route 3</option>
+        <option value="route4">Route 4</option>
+    </select>
+    <br><br>
+    <button type="submit">Save Stop</button>
+</form>
+<br>
+<hr>
+<h2>New Route Form</h2>
+<form action="" method="POST">
+    <p>Route Number</p>
+    <input type="number" name="routeNumber" min="0" max="99" required>
+    <p>Route Number</p>
+    <input type="text" name="routeName" required>
+    <p>Routes</p>
+    <select>
+        <option value="stop0">Stop 0</option>
+        <option value="stop1">Stop 1</option>
+        <option value="stop2">Stop 2</option>
+        <option value="stop3">Stop 3</option>
+        <option value="stop4">Stop 4</option>
+    </select>
+    <br><br>
+    <button type="submit">Save Route</button>
+</form>
+
+<%- include('./partials/footer') %>
