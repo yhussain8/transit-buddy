@@ -30,3 +30,11 @@ nav {
   font-size: 16px;
   font-style: italic;
 }
+
+.button-bar{
+  display: flex;
+}
+
+.button-bar > a {
+  margin: 0 10px 0 0;
+}

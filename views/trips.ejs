@@ -14,12 +14,14 @@
         <div class="sub-list"><%= route.routeID %> - <%= route.routeName %></div>
     <% } %>
     <br>
-    <a href="/trips/update/<%= trip._id %>">
-        <button>Update</button>
-    </a>
-    <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
-    </form>
+    <div class="button-bar">
+        <a href="/trips/update/<%= trip._id %>">
+            <button>Update</button>
+        </a>
+        <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
     <br><br>
     <hr>
 <% } %>
