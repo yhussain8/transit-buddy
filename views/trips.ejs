@@ -2,8 +2,26 @@
 
 <p>List of all user created trips in Blockville, Toronto!</p>
 
-<p>Trip 1</p>
-<p>Trip 2</p>
-<p>Trip 3</p>
+<% for (let trip of trips) { %>
+    <div class="list-item"><%= trip.tripName %></div>
+    <div class="list-detail"><%= trip.description %></div>
+    <div class="sub-list"><u>Stops Taken</u></div>
+    <% for (let stop of trip.stopsTaken) { %>
+        <div class="sub-list"><%= stop.stopID %> - <%= stop.stopName %></div>
+    <% } %>
+    <div class="sub-list"><u>Routes Taken</u></div>
+    <% for (let route of trip.routesTaken) { %>
+        <div class="sub-list"><%= route.routeID %> - <%= route.routeName %></div>
+    <% } %>
+    <br>
+    <a href="/trips/update/<%= trip._id %>">
+        <button>Update</button>
+    </a>
+    <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+    <br><br>
+    <hr>
+<% } %>
 
 <%- include('./partials/footer') %>

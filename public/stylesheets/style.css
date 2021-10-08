@@ -16,11 +16,23 @@ nav {
 }
 
 .list-item{
-  margin: 20px 0;
+  margin: 20px 0 0 0;
   font-size: 20px;
 }
 
 .sub-list {
   margin: 0 0 0 30px;
   font-size: 12px;
+}
+
+.list-detail {
+  margin: 0 0 20px 20px;
+  font-size: 16px;
+  font-style: italic;
+}
+
+#map {
+  background-image: url('images/blockville-map.svg');
+  width: 500px;
+  height: 500px;
 }

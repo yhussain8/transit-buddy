@@ -1,0 +1,26 @@
+<%- include('./partials/header') %>
+
+<p>Please pick one of the routes available from this stop...</p>
+<br>
+
+<form action="/new/step2" method="POST">
+
+    <input type="hidden" name="trip" value="<%= trip._id %>">
+    <p>Trip Name: <%= trip.tripName %></p>
+    <p>Description: <%= trip.description %></p>
+    <p>Stops Taken: <%= trip.stopsTaken %></p>
+    <p>Routes Taken: <%= trip.routesTaken %></p>
+    <br>
+
+    <h3>Available Routes</h3>
+    <select id="routesDropDown" name="route">
+        <% for (let route of stop.routeRefList) { %>
+            <option name="routeID" value="<%= route._id %>"><%= route.routeID %> - <%= route.routeName %></option>
+        <% } %>
+    </select>
+
+    <button type="submit">Select</button>
+
+</form>
+
+<%- include('./partials/footer') %>
