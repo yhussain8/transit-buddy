@@ -30,9 +30,3 @@ nav {
   font-size: 16px;
   font-style: italic;
 }
-
-#map {
-  background-image: url('images/blockville-map.svg');
-  width: 500px;
-  height: 500px;
-}
