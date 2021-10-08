@@ -7,12 +7,14 @@ function index(req, res) {
     res.render('index', {title: 'Transit Buddy'})
 }
 
-function routeIndex(req, res) {
-    res.render('routes', {title: 'Route Index'})
+async function routeIndex(req, res) {
+    let routes = await Route.find({}).sort('routeID').populate('stopRefList')
+    res.render('routes', {title: 'Route Index', routes})
 }
 
-function stopIndex(req, res) {
-    res.render('stops', {title: 'Stop Index'})
+async function stopIndex(req, res) {
+    let stops = await Stop.find({}).sort('stopID').populate('routeRefList')
+    res.render('stops', {title: 'Stop Index', stops})
 }
 
 function tripIndex(req, res) {

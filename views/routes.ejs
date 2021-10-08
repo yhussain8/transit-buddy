@@ -2,8 +2,12 @@
 
 <p>List of all bus routes in Blockville, Toronto!</p>
 
-<p>Route 1</p>
-<p>Route 2</p>
-<p>Route 3</p>
+<% for (let route of routes) { %>
+    <div class="list-item">#<%= route.routeID %> - <%= route.routeName %></div>
+    <div class="sub-list"><u>Stops En Route</u></div>
+    <% for (let stop of route.stopRefList) { %>
+        <div class="sub-list">#<%= stop.stopID %> - <%= stop.stopName %></div>
+    <% } %>
+<% } %>
 
 <%- include('./partials/footer') %>
