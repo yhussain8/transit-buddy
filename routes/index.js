@@ -1,12 +1,16 @@
 const express = require('express')
 const router = express.Router()
 
-router.get('/', function(req, res) {
-  res.render('index', {title: 'Transit Buddy'})
-})
+const indexCtrl = require('../controllers/index')
 
-router.get('/new', function(req, res) {
-  res.render('new', {title: 'Create New Routes & Stops'})
-})
+router.get('/', indexCtrl.index)
+
+router.get('/routes', indexCtrl.routeIndex)
+
+router.get('/stops', indexCtrl.stopIndex)
+
+router.get('/trips', indexCtrl.tripIndex)
+
+router.get('/new', indexCtrl.newTrip)
 
 module.exports = router
